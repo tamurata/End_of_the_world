@@ -1,0 +1,50 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://MC.gd" type="Script" id=1]
+[ext_resource path="res://assets/GhostFrames/tile006.png" type="Texture" id=2]
+[ext_resource path="res://assets/GhostFrames/tile007.png" type="Texture" id=3]
+[ext_resource path="res://assets/GhostFrames/tile008.png" type="Texture" id=4]
+[ext_resource path="res://assets/GhostFrames/tile003.png" type="Texture" id=5]
+[ext_resource path="res://assets/GhostFrames/tile004.png" type="Texture" id=6]
+[ext_resource path="res://assets/GhostFrames/tile005.png" type="Texture" id=7]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "idle",
+"speed": 6.0
+}, {
+"frames": [ ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "run",
+"speed": 6.0
+}, {
+"frames": [ ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "jump",
+"speed": 6.0
+}, {
+"frames": [ ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "fall",
+"speed": 6.0
+} ]
+
+[node name="MC" type="KinematicBody2D"]
+scale = Vector2( 0.75, 0.75 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 24, 32 )
+frames = SubResource( 1 )
+animation = "fall"
+frame = 2
+playing = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2( 28, 52 )
+polygon = PoolVector2Array( -3, -37, -1, -37, 6, -31, 8, -26, 8, -10, 6, 1, -2, 12, -10, 1, -12, -10, -12, -26, -10, -31 )
