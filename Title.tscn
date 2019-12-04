@@ -1,0 +1,32 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://start.gd" type="Script" id=1]
+
+[node name="Title" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_right = 320.0
+margin_bottom = 180.0
+
+[node name="Label" type="Label" parent="."]
+margin_right = 320.0
+margin_bottom = 80.0
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="Button" type="Button" parent="Node2D"]
+margin_left = 29.0
+margin_top = 112.0
+margin_right = 140.0
+margin_bottom = 167.0
+toggle_mode = true
+text = "START GAME"
+script = ExtResource( 1 )
+
+[node name="Button2" type="Button" parent="Node2D"]
+margin_left = 192.141
+margin_top = 111.724
+margin_right = 298.141
+margin_bottom = 164.724
+toggle_mode = true
+text = "QUIT GAME"
