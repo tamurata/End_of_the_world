@@ -213,6 +213,7 @@ position = Vector2( 151.159, -79.5481 )
 position = Vector2( -130, -199 )
 
 [node name="Foreground" type="Node2D" parent="."]
+editor/display_folded = true
 
 [node name="Intro" type="Node2D" parent="Foreground"]
 editor/display_folded = true
@@ -243,6 +244,7 @@ format = 1
 tile_data = PoolIntArray( -8519557, 0, 0, -7602069, 0, 0, -5963688, 0, 0, -5832633, 0, 0, -4390857, 0, 0, -3014623, 0, 0, -2424804, 0, 0, -458751, 0, 0 )
 
 [node name="Puzzle1" type="Node2D" parent="Foreground"]
+editor/display_folded = true
 
 [node name="StumpsForeground" type="TileMap" parent="Foreground/Puzzle1"]
 position = Vector2( -10, -170 )
