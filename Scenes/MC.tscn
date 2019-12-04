@@ -34,25 +34,22 @@ animations = [ {
 [node name="MC" type="KinematicBody2D"]
 scale = Vector2( 0.75, 0.75 )
 script = ExtResource( 1 )
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( 24, 32 )
+position = Vector2( -175.945, 52.5826 )
 frames = SubResource( 1 )
 animation = "fall"
 frame = 1
 playing = true
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-position = Vector2( 28, 52 )
+position = Vector2( -171.945, 72.5826 )
 polygon = PoolVector2Array( -3, -37, -1, -37, 6, -31, 8, -26, 8, -10, 6, 1, -2, 12, -10, 1, -12, -10, -12, -26, -10, -31 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
 smoothing_enabled = true
-drag_margin_left = 0.4
+drag_margin_left = 1.0
 drag_margin_top = 1.0
 drag_margin_right = 0.4
 drag_margin_bottom = 1.0
