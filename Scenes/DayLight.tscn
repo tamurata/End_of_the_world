@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Scenes/DayLight.gd" type="Script" id=1]
 [ext_resource path="res://assets/DayLighting.png" type="Texture" id=2]
 [ext_resource path="res://assets/TransparentCloud1.png" type="Texture" id=3]
 [ext_resource path="res://assets/TransparentCloud2.png" type="Texture" id=4]
 [ext_resource path="res://assets/TransparentCloudSmall.png" type="Texture" id=5]
+[ext_resource path="res://area_script.gd" type="Script" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 196, 118 )
@@ -16,6 +17,7 @@ __meta__ = {
 }
 
 [node name="Light" type="Node2D" parent="."]
+editor/display_folded = true
 
 [node name="Light2D2" type="Light2D" parent="Light"]
 position = Vector2( -73.5, 88 )
@@ -73,6 +75,7 @@ color = Color( 0.976471, 0.976471, 0.956863, 0.564706 )
 energy = 2.0
 
 [node name="Clouds" type="Node2D" parent="."]
+editor/display_folded = true
 
 [node name="TextureRect" type="TextureRect" parent="Clouds"]
 margin_left = 1.0
@@ -137,6 +140,7 @@ expand = true
 stretch_mode = 6
 
 [node name="Area2D" type="Area2D" parent="."]
+script = ExtResource( 6 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2( -74, 90 )
