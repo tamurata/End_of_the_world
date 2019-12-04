@@ -1,13 +1,20 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://assets/layer-1 inverted.png" type="Texture" id=1]
 [ext_resource path="res://assets/layer-2 inverted.png" type="Texture" id=2]
-[ext_resource path="res://assets/BlackBrick.jpg" type="Texture" id=3]
-[ext_resource path="res://Scenes/MC.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Scenes/DayLight.tscn" type="PackedScene" id=5]
-
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 9.86193, 256.41 )
+[ext_resource path="res://Tiles.tres" type="TileSet" id=3]
+[ext_resource path="res://Shrubs.tres" type="TileSet" id=4]
+[ext_resource path="res://Trees.tres" type="TileSet" id=5]
+[ext_resource path="res://Scenes/HouseNoDoor.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/TrashBags.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/TrashCan.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/TheStump.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/TheAxe.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scenes/Crow.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Stumps.tres" type="TileSet" id=12]
+[ext_resource path="res://Scenes/Branch.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Scenes/MC.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Scenes/DayLight.tscn" type="PackedScene" id=15]
 
 [node name="Game" type="Node2D"]
 position = Vector2( 10, 170 )
@@ -15,14 +22,23 @@ position = Vector2( 10, 170 )
 [node name="Backgrounds" type="Node2D" parent="."]
 editor/display_folded = true
 
+[node name="Black Protection" type="Node2D" parent="Backgrounds"]
+
+[node name="ColorRect" type="ColorRect" parent="Backgrounds/Black Protection"]
+margin_left = -188.0
+margin_top = -394.0
+margin_right = 2812.0
+margin_bottom = 206.0
+color = Color( 0, 0, 0, 1 )
+
 [node name="Background" type="Node2D" parent="Backgrounds"]
 editor/display_folded = true
 
 [node name="Layer2" type="TextureRect" parent="Backgrounds/Background"]
 margin_left = -10.0
-margin_top = -170.0
-margin_right = 365.0
-margin_bottom = 30.0
+margin_top = -228.0
+margin_right = 461.0
+margin_bottom = 15.0
 texture = ExtResource( 1 )
 expand = true
 stretch_mode = 5
@@ -30,22 +46,22 @@ stretch_mode = 5
 [node name="Layer1" type="TextureRect" parent="Backgrounds/Background"]
 modulate = Color( 1, 1, 1, 0.243137 )
 margin_left = -10.0
-margin_top = -171.587
-margin_right = 365.0
-margin_bottom = 133.413
+margin_top = -227.0
+margin_right = 461.0
+margin_bottom = 133.0
 texture = ExtResource( 2 )
 expand = true
 stretch_mode = 5
 
 [node name="Background2" type="Node2D" parent="Backgrounds"]
 editor/display_folded = true
-position = Vector2( 370, 0 )
+position = Vector2( 470, 0 )
 
 [node name="Layer2" type="TextureRect" parent="Backgrounds/Background2"]
 margin_left = -10.0
-margin_top = -170.0
-margin_right = 365.0
-margin_bottom = 30.0
+margin_top = -228.0
+margin_right = 461.0
+margin_bottom = 15.0
 texture = ExtResource( 1 )
 expand = true
 stretch_mode = 5
@@ -53,22 +69,22 @@ stretch_mode = 5
 [node name="Layer1" type="TextureRect" parent="Backgrounds/Background2"]
 modulate = Color( 1, 1, 1, 0.243137 )
 margin_left = -10.0
-margin_top = -171.587
-margin_right = 365.0
-margin_bottom = 133.413
+margin_top = -227.0
+margin_right = 461.0
+margin_bottom = 133.0
 texture = ExtResource( 2 )
 expand = true
 stretch_mode = 5
 
 [node name="Background3" type="Node2D" parent="Backgrounds"]
 editor/display_folded = true
-position = Vector2( 740, 0 )
+position = Vector2( 940, 0 )
 
 [node name="Layer2" type="TextureRect" parent="Backgrounds/Background3"]
 margin_left = -10.0
-margin_top = -170.0
-margin_right = 365.0
-margin_bottom = 30.0
+margin_top = -228.0
+margin_right = 461.0
+margin_bottom = 15.0
 texture = ExtResource( 1 )
 expand = true
 stretch_mode = 5
@@ -76,273 +92,160 @@ stretch_mode = 5
 [node name="Layer1" type="TextureRect" parent="Backgrounds/Background3"]
 modulate = Color( 1, 1, 1, 0.243137 )
 margin_left = -10.0
-margin_top = -171.587
-margin_right = 365.0
-margin_bottom = 133.413
+margin_top = -227.0
+margin_right = 461.0
+margin_bottom = 133.0
 texture = ExtResource( 2 )
 expand = true
 stretch_mode = 5
 
-[node name="Landscape" type="Node2D" parent="."]
+[node name="Background4" type="Node2D" parent="Backgrounds"]
+editor/display_folded = true
+position = Vector2( 1409, 0 )
+
+[node name="Layer2" type="TextureRect" parent="Backgrounds/Background4"]
+margin_left = -10.0
+margin_top = -228.0
+margin_right = 461.0
+margin_bottom = 15.0
+texture = ExtResource( 1 )
+expand = true
+stretch_mode = 5
+
+[node name="Layer1" type="TextureRect" parent="Backgrounds/Background4"]
+modulate = Color( 1, 1, 1, 0.243137 )
+margin_left = -10.0
+margin_top = -227.0
+margin_right = 461.0
+margin_bottom = 133.0
+texture = ExtResource( 2 )
+expand = true
+stretch_mode = 5
+
+[node name="Terrain" type="Node2D" parent="."]
+position = Vector2( -10, -170 )
+
+[node name="Blocks" type="TileMap" parent="Terrain"]
+scale = Vector2( 0.25, 0.25 )
+tile_set = ExtResource( 3 )
+cell_size = Vector2( 32, 32 )
+format = 1
+tile_data = PoolIntArray( -524290, 1, 0, -458754, 1, 0, -393218, 1, 0, -327682, 1, 0, -262146, 1, 0, -196610, 1, 0, -131074, 1, 0, -65538, 1, 0, 65534, 1, 0, 131070, 1, 0, 196606, 1, 0, 262142, 1, 0, 327678, 1, 0, 393214, 1, 0, 458750, 1, 0, 524286, 1, 0, 589822, 1, 0, 655358, 1, 0, 720894, 1, 0, 786430, 1, 0, 851966, 1, 0, 917502, 1, 0, 983038, 1, 0, 1048574, 1, 0, 1114110, 1, 0, 1179646, 1, 0, 1310718, 1, 0, 1245184, 0, 0, 1245186, 0, 0, 1245188, 0, 0, 1245190, 0, 0, 1245192, 0, 0, 1245194, 0, 0, 1245196, 0, 0, 1245198, 0, 0, 1245200, 0, 0, 1245202, 0, 0, 1245204, 0, 0, 1245206, 0, 0, 1245208, 0, 0, 1245210, 0, 0, 1245212, 0, 0, 1245214, 0, 0, 1245216, 0, 0, 1245218, 0, 0, 1245220, 0, 0, 1245222, 0, 0, 1245224, 0, 0, 1245226, 0, 0, 1245228, 0, 0, 1245230, 0, 0, 1245232, 1, 0, 1245234, 1, 0, 1245236, 1, 0, 1245238, 1, 0, 1245240, 1, 0, 1245242, 1, 0, 1245244, 1, 0, 1245246, 1, 0, 1245248, 1, 0, 1245250, 1, 0, 1245252, 1, 0, 1245254, 0, 0, 1245256, 0, 0, 1245258, 0, 0, 1245260, 0, 0, 1245262, 0, 0, 1245264, 0, 0, 1245266, 0, 0, 1245268, 0, 0, 1245270, 0, 0, 1245272, 0, 0, 1245274, 0, 0, 1245276, 0, 0, 1245278, 0, 0, 1245280, 0, 0, 1245282, 0, 0, 1245284, 0, 0, 1245286, 0, 0, 1245288, 0, 0, 1245290, 0, 0, 1245292, 0, 0, 1245294, 0, 0, 1245296, 0, 0, 1245298, 0, 0, 1245300, 0, 0, 1245302, 0, 0, 1245304, 0, 0, 1245306, 0, 0, 1245308, 0, 0, 1245310, 0, 0, 1245312, 0, 0, 1245314, 0, 0, 1245316, 0, 0, 1245318, 0, 0, 1245320, 0, 0, 1245322, 0, 0, 1245324, 0, 0, 1245326, 0, 0, 1245328, 0, 0, 1245330, 0, 0, 1245332, 0, 0, 1245334, 0, 0, 1245336, 0, 0, 1245338, 0, 0, 1245340, 0, 0, 1245342, 0, 0, 1245344, 0, 0, 1245346, 0, 0, 1245348, 0, 0, 1245350, 0, 0, 1245352, 0, 0, 1245354, 0, 0, 1245356, 0, 0, 1245358, 0, 0, 1245360, 0, 0, 1245362, 0, 0, 1245364, 0, 0, 1245366, 0, 0, 1245368, 0, 0, 1245370, 0, 0, 1245372, 0, 0, 1245374, 0, 0, 1245376, 0, 0, 1245378, 0, 0, 1245380, 0, 0, 1245382, 0, 0, 1245384, 0, 0, 1245386, 0, 0, 1245388, 0, 0, 1245390, 0, 0, 1245392, 0, 0, 1245394, 0, 0, 1245396, 0, 0, 1245398, 0, 0, 1245400, 0, 0, 1245402, 0, 0, 1245404, 0, 0, 1245406, 0, 0, 1245408, 0, 0, 1245410, 0, 0, 1245412, 0, 0, 1245414, 0, 0, 1245416, 0, 0, 1245418, 0, 0, 1441790, 1, 0, 1376256, 1, 0, 1376258, 1, 0, 1376260, 1, 0, 1376262, 1, 0, 1376264, 1, 0, 1376266, 1, 0, 1376268, 1, 0, 1376270, 1, 0, 1376272, 1, 0, 1376274, 1, 0, 1376276, 1, 0, 1376278, 1, 0, 1376280, 1, 0, 1376282, 1, 0, 1376284, 1, 0, 1376286, 1, 0, 1376288, 1, 0, 1376290, 1, 0, 1376292, 1, 0, 1376294, 1, 0, 1376296, 1, 0, 1376298, 1, 0, 1376300, 1, 0, 1376302, 1, 0, 1376304, 1, 0, 1376306, 1, 0, 1376308, 1, 0, 1376310, 1, 0, 1376312, 1, 0, 1376314, 1, 0, 1376316, 1, 0, 1376318, 1, 0, 1376320, 1, 0, 1376322, 1, 0, 1376324, 1, 0, 1376326, 1, 0, 1376328, 1, 0, 1376330, 1, 0, 1376332, 1, 0, 1376334, 1, 0, 1376336, 1, 0, 1376338, 1, 0, 1376340, 1, 0, 1376342, 1, 0, 1376344, 1, 0, 1376346, 1, 0, 1376348, 1, 0, 1376350, 1, 0, 1376352, 1, 0, 1376354, 1, 0, 1376356, 1, 0, 1376358, 1, 0, 1376360, 1, 0, 1376362, 1, 0, 1376364, 1, 0, 1376366, 1, 0, 1376368, 1, 0, 1376370, 1, 0, 1376372, 1, 0, 1376374, 1, 0, 1376376, 1, 0, 1376378, 1, 0, 1376380, 1, 0, 1376382, 1, 0, 1376384, 1, 0, 1376386, 1, 0, 1376388, 1, 0, 1376390, 1, 0, 1376392, 1, 0, 1376394, 1, 0, 1376396, 1, 0, 1376398, 1, 0, 1376400, 1, 0, 1376402, 1, 0, 1376404, 1, 0, 1376406, 1, 0, 1376408, 1, 0, 1376410, 1, 0, 1376412, 1, 0, 1376414, 1, 0, 1376416, 1, 0, 1376418, 1, 0, 1376420, 1, 0, 1376422, 1, 0, 1376424, 1, 0, 1376426, 1, 0, 1376428, 1, 0, 1376430, 1, 0, 1376432, 1, 0, 1376434, 1, 0, 1376436, 1, 0, 1376438, 1, 0, 1376440, 1, 0, 1376442, 1, 0, 1376444, 1, 0, 1376446, 1, 0, 1376448, 1, 0, 1376450, 1, 0, 1376452, 1, 0, 1376454, 1, 0, 1376456, 1, 0, 1376458, 1, 0, 1376460, 1, 0, 1376462, 1, 0, 1376464, 1, 0, 1376466, 1, 0, 1376468, 1, 0, 1376470, 1, 0, 1376472, 1, 0, 1376474, 1, 0, 1376476, 1, 0, 1376478, 1, 0, 1376480, 1, 0, 1376482, 1, 0, 1376484, 1, 0, 1376486, 1, 0, 1376488, 1, 0, 1376490, 1, 0 )
+
+[node name="Intro" type="Node2D" parent="Terrain"]
 editor/display_folded = true
 
-[node name="Ground00" type="Sprite" parent="Landscape"]
-editor/display_folded = true
-scale = Vector2( 0.039, 0.039 )
-texture = ExtResource( 3 )
-__meta__ = {
-"_edit_group_": true
-}
+[node name="ShrubsBackBack" type="TileMap" parent="Terrain/Intro"]
+scale = Vector2( 0.45, 0.45 )
+tile_set = ExtResource( 4 )
+cell_size = Vector2( 8, 8 )
+cell_quadrant_size = 8
+format = 1
+tile_data = PoolIntArray( 2228227, 0, 0, 2228239, 0, 0, 2228257, 0, 0, 2228272, 0, 0, 2228295, 0, 0, 2228327, 0, 0, 2228387, 0, 0, 2228433, 0, 0 )
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Landscape/Ground00"]
-editor/display_folded = true
+[node name="TreesBack" type="TileMap" parent="Terrain/Intro"]
+scale = Vector2( 0.9, 0.9 )
+mode = 1
+tile_set = ExtResource( 5 )
+cell_size = Vector2( 8, 8 )
+cell_quadrant_size = 8
+cell_custom_transform = Transform2D( 2, 0, 0, 2, 0, 0 )
+format = 1
+tile_data = PoolIntArray( -4653006, 536870912, 0, -2228211, 0, 0, -589836, 0, 0, 65514, 536870912, 0 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Landscape/Ground00/StaticBody2D"]
-scale = Vector2( 26, 1 )
-shape = SubResource( 1 )
+[node name="HouseNoDoor" parent="Terrain/Intro" instance=ExtResource( 6 )]
+position = Vector2( 364, 26 )
 
-[node name="Ground12" type="Sprite" parent="Landscape"]
-editor/display_folded = true
-position = Vector2( 159.984, -0.0161133 )
-scale = Vector2( 0.039, 0.039 )
-texture = ExtResource( 3 )
-__meta__ = {
-"_edit_group_": true
-}
+[node name="TrashBags3" parent="Terrain/Intro" instance=ExtResource( 7 )]
+position = Vector2( 299, 153 )
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Landscape/Ground12"]
-editor/display_folded = true
+[node name="TrashCan" parent="Terrain/Intro" instance=ExtResource( 8 )]
+position = Vector2( 323, 141 )
+rotation = 0.380482
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Landscape/Ground12/StaticBody2D"]
-scale = Vector2( 26, 1 )
-shape = SubResource( 1 )
+[node name="TrashBags2" parent="Terrain/Intro" instance=ExtResource( 7 )]
+position = Vector2( 345, 154 )
 
-[node name="Ground04" type="Sprite" parent="Landscape"]
-editor/display_folded = true
-position = Vector2( 80, 0 )
-scale = Vector2( 0.039, 0.039 )
-texture = ExtResource( 3 )
-__meta__ = {
-"_edit_group_": true
-}
+[node name="TrashBags" parent="Terrain/Intro" instance=ExtResource( 7 )]
+position = Vector2( 314, 159 )
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Landscape/Ground04"]
-editor/display_folded = true
+[node name="ShrubsBackFront" type="TileMap" parent="Terrain/Intro"]
+scale = Vector2( 0.5, 0.5 )
+tile_set = ExtResource( 4 )
+cell_size = Vector2( 8, 8 )
+cell_quadrant_size = 8
+format = 1
+tile_data = PoolIntArray( 1966099, 0, 0, 2031616, 0, 0, 2031645, 0, 0, 2031687, 0, 0, 2031772, 0, 0, 2031870, 0, 0, 2097339, 0, 0 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Landscape/Ground04/StaticBody2D"]
-scale = Vector2( 26, 1 )
-shape = SubResource( 1 )
+[node name="TheStump" parent="Terrain/Intro" instance=ExtResource( 9 )]
+position = Vector2( 716, 159 )
 
-[node name="Ground15" type="Sprite" parent="Landscape"]
-editor/display_folded = true
-position = Vector2( 239.984, -0.0161133 )
-scale = Vector2( 0.039, 0.039 )
-texture = ExtResource( 3 )
-__meta__ = {
-"_edit_group_": true
-}
+[node name="TheStump2" parent="Terrain/Intro" instance=ExtResource( 9 )]
+position = Vector2( 1159, 153 )
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Landscape/Ground15"]
-editor/display_folded = true
+[node name="TheAxe" parent="Terrain/Intro" instance=ExtResource( 10 )]
+position = Vector2( 707, 139 )
+scale = Vector2( 0.4, 0.4 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Landscape/Ground15/StaticBody2D"]
-scale = Vector2( 26, 1 )
-shape = SubResource( 1 )
+[node name="Crow" parent="Terrain/Intro" instance=ExtResource( 11 )]
+position = Vector2( 646, 17 )
+scale = Vector2( 0.4, 0.4 )
 
-[node name="Ground05" type="Sprite" parent="Landscape"]
-editor/display_folded = true
-position = Vector2( 100, 0 )
-scale = Vector2( 0.039, 0.039 )
-texture = ExtResource( 3 )
-__meta__ = {
-"_edit_group_": true
-}
+[node name="Puzzle1" type="Node2D" parent="Terrain"]
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Landscape/Ground05"]
-editor/display_folded = true
+[node name="StumpsBack" type="TileMap" parent="Terrain/Puzzle1"]
+scale = Vector2( 0.9, 0.9 )
+tile_set = ExtResource( 12 )
+cell_size = Vector2( 8, 8 )
+cell_quadrant_size = 8
+format = 1
+tile_data = PoolIntArray( 131087, 0, 0, 1048684, 536870912, 0, 1048757, 536870912, 0 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Landscape/Ground05/StaticBody2D"]
-scale = Vector2( 26, 1 )
-shape = SubResource( 1 )
+[node name="Branch" parent="Terrain/Puzzle1" instance=ExtResource( 13 )]
+position = Vector2( 1509, 143 )
 
-[node name="Ground09" type="Sprite" parent="Landscape"]
-editor/display_folded = true
-position = Vector2( 259.984, -0.0161133 )
-scale = Vector2( 0.039, 0.039 )
-texture = ExtResource( 3 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Landscape/Ground09"]
-editor/display_folded = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Landscape/Ground09/StaticBody2D"]
-scale = Vector2( 26, 1 )
-shape = SubResource( 1 )
-
-[node name="Ground06" type="Sprite" parent="Landscape"]
-editor/display_folded = true
-position = Vector2( 120, 0 )
-scale = Vector2( 0.039, 0.039 )
-texture = ExtResource( 3 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Landscape/Ground06"]
-editor/display_folded = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Landscape/Ground06/StaticBody2D"]
-scale = Vector2( 26, 1 )
-shape = SubResource( 1 )
-
-[node name="Ground11" type="Sprite" parent="Landscape"]
-editor/display_folded = true
-position = Vector2( 279.984, -0.0161133 )
-scale = Vector2( 0.039, 0.039 )
-texture = ExtResource( 3 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Landscape/Ground11"]
-editor/display_folded = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Landscape/Ground11/StaticBody2D"]
-scale = Vector2( 26, 1 )
-shape = SubResource( 1 )
-
-[node name="Ground07" type="Sprite" parent="Landscape"]
-editor/display_folded = true
-position = Vector2( 140, 0 )
-scale = Vector2( 0.039, 0.039 )
-texture = ExtResource( 3 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Landscape/Ground07"]
-editor/display_folded = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Landscape/Ground07/StaticBody2D"]
-scale = Vector2( 26, 1 )
-shape = SubResource( 1 )
-
-[node name="Ground13" type="Sprite" parent="Landscape"]
-editor/display_folded = true
-position = Vector2( 299.984, -0.0161133 )
-scale = Vector2( 0.039, 0.039 )
-texture = ExtResource( 3 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Landscape/Ground13"]
-editor/display_folded = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Landscape/Ground13/StaticBody2D"]
-scale = Vector2( 26, 1 )
-shape = SubResource( 1 )
-
-[node name="Ground01" type="Sprite" parent="Landscape"]
-editor/display_folded = true
-position = Vector2( 20, 0 )
-scale = Vector2( 0.039, 0.039 )
-texture = ExtResource( 3 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Landscape/Ground01"]
-editor/display_folded = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Landscape/Ground01/StaticBody2D"]
-scale = Vector2( 26, 1 )
-shape = SubResource( 1 )
-
-[node name="Ground08" type="Sprite" parent="Landscape"]
-editor/display_folded = true
-position = Vector2( 179.984, -0.0161133 )
-scale = Vector2( 0.039, 0.039 )
-texture = ExtResource( 3 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Landscape/Ground08"]
-editor/display_folded = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Landscape/Ground08/StaticBody2D"]
-scale = Vector2( 26, 1 )
-shape = SubResource( 1 )
-
-[node name="Ground02" type="Sprite" parent="Landscape"]
-editor/display_folded = true
-position = Vector2( 40, 0 )
-scale = Vector2( 0.039, 0.039 )
-texture = ExtResource( 3 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Landscape/Ground02"]
-editor/display_folded = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Landscape/Ground02/StaticBody2D"]
-scale = Vector2( 26, 1 )
-shape = SubResource( 1 )
-
-[node name="Ground14" type="Sprite" parent="Landscape"]
-editor/display_folded = true
-position = Vector2( 199.984, -0.0161133 )
-scale = Vector2( 0.039, 0.039 )
-texture = ExtResource( 3 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Landscape/Ground14"]
-editor/display_folded = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Landscape/Ground14/StaticBody2D"]
-scale = Vector2( 26, 1 )
-shape = SubResource( 1 )
-
-[node name="Ground03" type="Sprite" parent="Landscape"]
-editor/display_folded = true
-position = Vector2( 60, 0 )
-scale = Vector2( 0.039, 0.039 )
-texture = ExtResource( 3 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Landscape/Ground03"]
-editor/display_folded = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Landscape/Ground03/StaticBody2D"]
-scale = Vector2( 26, 1 )
-shape = SubResource( 1 )
-
-[node name="Ground10" type="Sprite" parent="Landscape"]
-editor/display_folded = true
-position = Vector2( 219.984, -0.0161133 )
-scale = Vector2( 0.039, 0.039 )
-texture = ExtResource( 3 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Landscape/Ground10"]
-editor/display_folded = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Landscape/Ground10/StaticBody2D"]
-scale = Vector2( 26, 1 )
-shape = SubResource( 1 )
-
-[node name="MC" parent="." instance=ExtResource( 4 )]
+[node name="MC" parent="." instance=ExtResource( 14 )]
 position = Vector2( 151.159, -79.5481 )
 
-[node name="DayLight" parent="." instance=ExtResource( 5 )]
-position = Vector2( -130, -170 )
+[node name="DayLight" parent="." instance=ExtResource( 15 )]
+position = Vector2( -130, -199 )
+
+[node name="Foreground" type="Node2D" parent="."]
+
+[node name="Intro" type="Node2D" parent="Foreground"]
+editor/display_folded = true
+
+[node name="BackShrub" type="TileMap" parent="Foreground/Intro"]
+scale = Vector2( 0.6, 0.6 )
+tile_set = ExtResource( 4 )
+cell_size = Vector2( 8, 8 )
+cell_quadrant_size = 8
+format = 1
+tile_data = PoolIntArray( -589691, 0, 0, -524176, 0, 0, -458736, 0, 0, -458606, 0, 0, -458591, 0, 0, -393169, 0, 0, -393095, 0, 0, -327674, 0, 0, -327641, 0, 0 )
+
+[node name="Trees" type="TileMap" parent="Foreground/Intro"]
+mode = 1
+tile_set = ExtResource( 5 )
+cell_size = Vector2( 8, 8 )
+cell_quadrant_size = 8
+format = 1
+tile_data = PoolIntArray( -7274440, 0, 0, -5636064, 536870912, 0, -2818063, 536870912, 0, -1179684, 0, 0 )
+
+[node name="FrontShrub2" type="TileMap" parent="Foreground/Intro"]
+scale = Vector2( 0.75, 0.75 )
+mode = 1
+tile_set = ExtResource( 4 )
+cell_size = Vector2( 8, 8 )
+cell_quadrant_size = 8
+format = 1
+tile_data = PoolIntArray( -8519557, 0, 0, -7602069, 0, 0, -5963688, 0, 0, -5832633, 0, 0, -4390857, 0, 0, -3014623, 0, 0, -2424804, 0, 0, -458751, 0, 0 )
+
+[node name="Puzzle1" type="Node2D" parent="Foreground"]
+
+[node name="StumpsForeground" type="TileMap" parent="Foreground/Puzzle1"]
+position = Vector2( -10, -170 )
+tile_set = ExtResource( 12 )
+cell_size = Vector2( 8, 8 )
+cell_quadrant_size = 8
+format = 1
+tile_data = PoolIntArray( 1048687, 536870912, 0, 1114242, 0, 0, 1114258, 536870912, 0, 1245343, 0, 0 )
