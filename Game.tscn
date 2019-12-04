@@ -123,6 +123,7 @@ expand = true
 stretch_mode = 5
 
 [node name="Terrain" type="Node2D" parent="."]
+editor/display_folded = true
 position = Vector2( -10, -170 )
 
 [node name="Blocks" type="TileMap" parent="Terrain"]
@@ -192,6 +193,7 @@ position = Vector2( 646, 17 )
 scale = Vector2( 0.4, 0.4 )
 
 [node name="Puzzle1" type="Node2D" parent="Terrain"]
+editor/display_folded = true
 
 [node name="StumpsBack" type="TileMap" parent="Terrain/Puzzle1"]
 scale = Vector2( 0.9, 0.9 )
