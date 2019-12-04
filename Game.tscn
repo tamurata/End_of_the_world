@@ -13,7 +13,6 @@ extents = Vector2( 9.86193, 256.41 )
 position = Vector2( 10, 170 )
 
 [node name="Background" type="Node2D" parent="."]
-editor/display_folded = true
 
 [node name="Layer2" type="TextureRect" parent="Background"]
 margin_left = -10.0
@@ -27,9 +26,9 @@ stretch_mode = 5
 [node name="Layer1" type="TextureRect" parent="Background"]
 modulate = Color( 1, 1, 1, 0.243137 )
 margin_left = -10.0
-margin_top = -170.0
+margin_top = -171.587
 margin_right = 365.0
-margin_bottom = 135.0
+margin_bottom = 133.413
 texture = ExtResource( 2 )
 expand = true
 stretch_mode = 5
