@@ -17,17 +17,17 @@ animations = [ {
 }, {
 "frames": [ ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ) ],
 "loop": true,
+"name": "fall",
+"speed": 6.0
+}, {
+"frames": [ ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ) ],
+"loop": true,
 "name": "jump",
 "speed": 6.0
 }, {
 "frames": [ ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ) ],
 "loop": true,
 "name": "run",
-"speed": 6.0
-}, {
-"frames": [ ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ) ],
-"loop": true,
-"name": "fall",
 "speed": 6.0
 } ]
 
@@ -61,6 +61,6 @@ smoothing_enabled = true
 drag_margin_left = 1.0
 drag_margin_top = 1.0
 drag_margin_right = 0.4
-drag_margin_bottom = 1.0
+drag_margin_bottom = 0.1
 editor_draw_limits = true
 editor_draw_drag_margin = true
