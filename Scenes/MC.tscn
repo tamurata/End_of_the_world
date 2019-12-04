@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://MC.gd" type="Script" id=1]
 [ext_resource path="res://assets/GhostFrames/tile006.png" type="Texture" id=2]
@@ -31,20 +31,29 @@ animations = [ {
 "speed": 6.0
 } ]
 
-[node name="MC" type="KinematicBody2D"]
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 11.2709
+height = 19.686
+
+[node name="MC" type="KinematicBody2D" groups=[
+"Player",
+]]
 scale = Vector2( 0.75, 0.75 )
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( -175.945, 52.5826 )
 frames = SubResource( 1 )
-animation = "fall"
-frame = 1
+animation = "idle"
+frame = 2
 playing = true
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-position = Vector2( -171.945, 72.5826 )
-polygon = PoolVector2Array( -3, -37, -1, -37, 6, -31, 8, -26, 8, -10, 6, 1, -2, 12, -10, 1, -12, -10, -12, -26, -10, -31 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -174.174, 55.9846 )
+shape = SubResource( 2 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
