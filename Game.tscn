@@ -24,9 +24,9 @@ position = Vector2( 10, 170 )
 
 [node name="ColorRect" type="ColorRect" parent="Backgrounds/Black Protection"]
 margin_left = -188.0
-margin_top = -394.0
+margin_top = -350.0
 margin_right = 2812.0
-margin_bottom = 206.0
+margin_bottom = 250.0
 color = Color( 0, 0, 0, 1 )
 
 [node name="Background" type="Node2D" parent="Backgrounds"]
