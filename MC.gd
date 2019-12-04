@@ -35,6 +35,6 @@ func _physics_process(delta):
 	else:
 		on_ground = false
 	velocity = move_and_slide(velocity,FLOOR)
-	if position.y > get_viewport_rect().end.y:
+		if position.y > get_viewport_rect().end.y:
 		queue_free()
 		get_tree().change_scene("Game.tscn")
