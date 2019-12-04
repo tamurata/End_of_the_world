@@ -15,7 +15,7 @@ _global_script_class_icons={
 
 [application]
 
-config/name="New Game Project"
+config/name="End_of_the_world"
 run/main_scene="res://Game.tscn"
 config/icon="res://icon.png"
 
