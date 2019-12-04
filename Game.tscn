@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://assets/layer-1 inverted.png" type="Texture" id=1]
 [ext_resource path="res://assets/layer-2 inverted.png" type="Texture" id=2]
@@ -15,6 +15,8 @@
 [ext_resource path="res://Scenes/Branch.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Scenes/MC.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Scenes/DayLight.tscn" type="PackedScene" id=15]
+[ext_resource path="res://assets/music/Kai_Engel_-_04_-_Moonlight_Reprise.wav" type="AudioStream" id=16]
+[ext_resource path="res://assets/music/Wind-Mark_DiAngelo-1940285615.wav" type="AudioStream" id=17]
 
 [node name="Game" type="Node2D"]
 position = Vector2( 10, 170 )
@@ -253,3 +255,13 @@ cell_size = Vector2( 8, 8 )
 cell_quadrant_size = 8
 format = 1
 tile_data = PoolIntArray( 1048687, 536870912, 0, 1114242, 0, 0, 1114258, 536870912, 0, 1245343, 0, 0 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 16 )
+volume_db = -13.0
+autoplay = true
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 17 )
+volume_db = -7.0
+autoplay = true
