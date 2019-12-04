@@ -3,6 +3,7 @@
 [ext_resource path="res://start.gd" type="Script" id=1]
 
 [node name="Title" type="Node2D"]
+position = Vector2( -6, -4 )
 
 [node name="TextureRect" type="TextureRect" parent="."]
 margin_right = 320.0

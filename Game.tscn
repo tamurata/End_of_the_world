@@ -85,7 +85,6 @@ stretch_mode = 5
 
 [node name="Landscape" type="Node2D" parent="."]
 editor/display_folded = true
-visible = false
 
 [node name="Ground00" type="Sprite" parent="Landscape"]
 editor/display_folded = true
@@ -346,5 +345,4 @@ shape = SubResource( 1 )
 position = Vector2( 151.159, -79.5481 )
 
 [node name="DayLight" parent="." instance=ExtResource( 5 )]
-visible = false
 position = Vector2( -130, -170 )
